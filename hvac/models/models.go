@@ -2,8 +2,8 @@ package models
 
 import (
 	"fmt"
-	"github.com/gsasha/hvac_ip_mqtt_bridge/hvac/base"
-	"github.com/gsasha/hvac_ip_mqtt_bridge/hvac/models/samsung"
+	"github.com/lcorsini/hvac_ip_mqtt_bridge/hvac/base"
+	"github.com/lcorsini/hvac_ip_mqtt_bridge/hvac/models/samsung"
 )
 
 func NewController(

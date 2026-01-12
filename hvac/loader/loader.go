@@ -3,8 +3,8 @@ package loader
 import (
 	"fmt"
 	yaml "github.com/goccy/go-yaml"
-	"github.com/gsasha/hvac_ip_mqtt_bridge/hvac/base"
-	"github.com/gsasha/hvac_ip_mqtt_bridge/hvac/models"
+	"github.com/lcorsini/hvac_ip_mqtt_bridge/hvac/base"
+	"github.com/lcorsini/hvac_ip_mqtt_bridge/hvac/models"
 	"io/ioutil"
 	"log"
 )

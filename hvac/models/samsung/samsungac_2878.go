@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/xml"
 	"fmt"
-	"github.com/gsasha/hvac_ip_mqtt_bridge/hvac/base"
+	"github.com/lcorsini/hvac_ip_mqtt_bridge/hvac/base"
 	"log"
 	"strings"
 	"text/template"
