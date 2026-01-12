@@ -8,10 +8,21 @@ RUN go mod download
 
 COPY . .
 
-# GOARCH is set by Buildx automatically
-RUN CGO_ENABLED=0 GOOS=linux \
-  go build -trimpath -ldflags="-s -w" \
-  -o /out/hvac_ip_mqtt_bridge .
+ARG TARGETOS
+ARG TARGETARCH
+ARG TARGETVARIANT
+
+RUN set -eux; \
+  GOARM=""; \
+  if [ "$TARGETARCH" = "arm" ]; then \
+  case "$TARGETVARIANT" in \
+  "v7") GOARM="7" ;; \
+  "v6") GOARM="6" ;; \
+  *) GOARM="7" ;; \
+  esac; \
+  fi; \
+  CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH GOARM=$GOARM \
+  go build -trimpath -ldflags="-s -w" -o /out/hvac_ip_mqtt_bridge .
 
 FROM alpine:3.20
 RUN apk add --no-cache ca-certificates
